@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Khaembas Music Recording Label</title>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #020617;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #020617;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: #38bdf8;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to right, #0f172a, #020617);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero p {
+            color: #cbd5f5;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #38bdf8;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* CARDS */
+        .card {
+            background: #0f172a;
+            padding: 20px;
+            margin: 15px auto;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        /* MUSIC */
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .track {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            cursor: pointer;
+            background: #020617;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .track:hover {
+            background: #1e293b;
+        }
+
+        .track img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#music">Music</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Khaembas Music Recording Label</h1>
+    <p>Recording • Production • Artist Growth</p>
+    <button onclick="contact()">Book a Session</button>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+    <h2>About Us</h2>
+    <div class="card">
+        <p>We produce high-quality music and help artists grow 🎵🔥</p>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="card">🎤 Music Recording</div>
+    <div class="card">🎧 Audio Production</div>
+    <div class="card">🚀 Artist Promotion</div>
+</div>
+
+<!-- MUSIC PLAYER -->
+<div id="music" class="section">
+    <h2>Our Music 🎶</h2>
+
+    <div class="card">
+        <p id="nowPlaying">Now Playing: Track 1</p>
+
+        <audio id="player" controls>
+            <source id="audioSource" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+        </audio>
+
+        <!-- TRACK 1 -->
+        <div class="track" onclick="playSong('Track 1', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')">
+            <img src="https://via.placeholder.com/60">
+            <span>🎵 Track 1</span>
+        </div>
+
+        <!-- TRACK 2 -->
+        <div class="track" onclick="playSong('Track 2', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')">
+            <img src="https://via.placeholder.com/60">
+            <span>🎵 Track 2</span>
+        </div>
+
+        <!-- TRACK 3 -->
+        <div class="track" onclick="playSong('Track 3', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')">
+            <img src="https://via.placeholder.com/60">
+            <span>🎵 Track 3</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: rjoe99301@gmail.com</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Khaembas Music Recording Label
+</footer>
+
+<script>
+    function playSong(title, src) {
+        document.getElementById("nowPlaying").innerHTML = "Now Playing: " + title;
+        document.getElementById("audioSource").src = src;
+        document.getElementById("player").load();
+        document.getElementById("player").play();
+    }
+
+    function contact() {
+        alert("Contact us at: rjoe99301@gmail.com");
+    }
+</script>
+
+</body>
+</html>
